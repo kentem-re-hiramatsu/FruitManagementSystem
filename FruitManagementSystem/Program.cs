@@ -1,5 +1,4 @@
-﻿using FruitManagementSystem.Enums;
-using FruitManagementSystem.Controller;
+﻿using FruitManagementSystem.Controller;
 
 namespace FruitManagementSystem
 {
@@ -28,7 +27,7 @@ namespace FruitManagementSystem
                     }
                     else if (fruitNum == 9)
                     {
-                        Console.WriteLine("合計金額は");
+                        Console.WriteLine("合計金額は{0}", fruitController.FruitTotalAmount());
                     }
                     else
                     {

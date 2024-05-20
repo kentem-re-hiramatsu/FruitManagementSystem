@@ -44,5 +44,19 @@ namespace FruitManagementSystem.Controller
             }
             return fruitTotalAmount;
         }
+
+        public int GetFruitCount(string messageCount, string errorMessage)
+        {
+            Console.WriteLine(messageCount);
+            while (true)
+            {
+                string inputFruitCount = Console.ReadLine()!;
+
+                if (int.TryParse(inputFruitCount, out int fruitCount))
+                    return fruitCount;
+                else
+                    Console.WriteLine(errorMessage);
+            }
+        }
     }
 }

@@ -19,10 +19,12 @@ namespace FruitManagementSystem
 
                 if (int.TryParse(inputFruitNum, out int fruitNum))
                 {
-                    if(fruitNum == 1 || fruitNum == 2 || fruitNum == 3 || fruitNum == 4)
+                    if(fruitNum >= 1 && fruitNum <= 4)
                     {
-                        var program = new Program();
-                        var fruitCount = program.GetFruitCount();
+                        string messageCount = "個数を入力してください。";
+                        string errorMessage = "正しく個数が入力されていません";
+
+                        var fruitCount = fruitController.GetFruitCount(messageCount, errorMessage);
                         fruitController.FruitListAdd(fruitNum, fruitCount);
                     }
                     else if (fruitNum == 9)
@@ -37,18 +39,6 @@ namespace FruitManagementSystem
                 }
             }
         }
-        public int GetFruitCount()
-        {
-            Console.WriteLine("個数を入力してください。");
-            while (true)
-            {
-                string inputFruitCount = Console.ReadLine()!;
 
-                if (int.TryParse(inputFruitCount, out int fruitCount))
-                    return fruitCount;
-                else
-                    Console.WriteLine("正しく個数が入力されていません");
-            }
-        }
     }
 }
